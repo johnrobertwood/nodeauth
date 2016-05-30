@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#navlist {
+	display: flex;
+	list-style: none;
+}
