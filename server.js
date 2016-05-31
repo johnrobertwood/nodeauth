@@ -13,6 +13,7 @@ var morgan       = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser   = require('body-parser');
 var session      = require('express-session');
+var bodyParser   = require('body-parser');
 
 var configDB = require('./config/database.js');
 
@@ -28,7 +29,7 @@ app.use(bodyParser()); // get information from html forms
 
 app.set('view engine', 'ejs'); // set up ejs for templating
 
-app.use(express.static(__dirname))
+app.use(express.static(__dirname + '/app'))
 
 // required for passport
 app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
