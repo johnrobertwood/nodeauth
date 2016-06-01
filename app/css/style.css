@@ -32,6 +32,11 @@
 	align-items: center;
 }
 
+.profile {
+	display: flex;
+	justify-content: center;
+}
+
 #local-login {
 	margin-right: 20px;
 }
