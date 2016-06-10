@@ -4,7 +4,7 @@ module.exports = function(app, passport) {
     // HOME PAGE (with login links) ========
     // =====================================
     // app.get('/', function(req, res) {
-    //     res.render('index.ejs'); // load the index.ejs file
+    //     res.send('OK')
     // });
 
     // =====================================
@@ -19,13 +19,6 @@ module.exports = function(app, passport) {
     app.post('/login', passport.authenticate('local-login'), function(req, res) {
         res.json(req.user);
     });
-
-        
-
-    // app.post('/login', function(req, res) {
-    //     console.log(req.body.email)
-    //     res.status(200);
-    // });
 
 
     // =====================================
@@ -50,21 +43,21 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-            console.log("profile route")
+        res.send(req.user)
     });
 
     // =====================================
     // FACEBOOK ROUTES =====================
     // =====================================
     // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope : 'email' }));
+    app.get('/auth/facebook', passport.authenticate('facebook'));
 
-    // handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
             successRedirect : '/profile',
             failureRedirect : '/'
         }));
+
 
     // =====================================
     // LOGOUT ==============================

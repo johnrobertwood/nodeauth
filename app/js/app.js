@@ -23,6 +23,10 @@ pollApp.config(['$routeProvider',
         templateUrl: 'views/profileView.html',
         controller: 'ProfileCtrl'
       })
+      .when('/newpoll', {
+        templateUrl: 'views/newPollView.html',
+        controller: 'ProfileCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -32,9 +32,27 @@
 	align-items: center;
 }
 
+.heading {
+	display: flex;
+	justify-content: center;
+}
+
 .profile {
 	display: flex;
 	justify-content: center;
+}
+
+.content {
+	display: flex;
+	justify-content: center;
+}
+
+input {
+	margin-bottom: 20px;
+}
+
+textarea {
+	margin-bottom: 20px;
 }
 
 #local-login {
