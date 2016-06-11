@@ -30,13 +30,6 @@ angular.module('pollControllers', [])
 		})
 	}
 
-	// $scope.fbLogin = function() {
-	// 	$http.get('/auth/facebook').success(function(res) {
-	// 		userService.setUser(res.local.email, res.local.password);
-	// 		window.location.href = '#/profile';
-	// 	});
-	// };
-
 }])
 
 .controller('ProfileCtrl', ['$scope', '$http', 'userService', function($scope, $http, userService) {
