@@ -12,7 +12,7 @@ module.exports = function(app, passport) {
     // =====================================
     // show the login form
     app.get('/login', function(req, res) {
-        res.send('OK');
+        res.send(200);
     });
 
     // process the login form
@@ -21,19 +21,19 @@ module.exports = function(app, passport) {
     });
 
 
-    // =====================================
-    // SIGNUP ==============================
-    // =====================================
-    // show the signup form
+    // // =====================================
+    // // SIGNUP ==============================
+    // // =====================================
+    // // show the signup form
     app.get('/signup', function(req, res) {
 
-        res.send('OK');
+        res.send(200);
          
     });
 
     // process the signup form
     app.post('/signup', passport.authenticate('local-signup'), function(req, res) {
-        res.json(req.newUser);
+        res.send(200);
     });
 
 
@@ -45,19 +45,6 @@ module.exports = function(app, passport) {
     app.get('/profile', isLoggedIn, function(req, res) {
         res.send(req.user)
     });
-
-    // =====================================
-    // FACEBOOK ROUTES =====================
-    // =====================================
-    // route for facebook authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook'));
-
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect : '/profile',
-            failureRedirect : '/'
-        }));
-
 
     // =====================================
     // LOGOUT ==============================
